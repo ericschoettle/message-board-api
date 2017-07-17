@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create!(post_params)
-    json_response(@post)
+    json_response(@post, :created)
   end
 
   def update
