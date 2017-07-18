@@ -19,6 +19,6 @@ describe "post a post route", :type => :request do
   end
 
   it 'returns a created status' do
-    expect(response).to have_http_status(:success)
+    expect(response).to have_http_status(:created)
   end
 end

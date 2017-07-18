@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    name = params[:name]
+    @posts = Post.search(name)
+    # @posts = Post.all
     json_response(@posts)
   end
 
@@ -17,6 +19,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update!(post_params)
+    json_response(@post, :ok)
   end
 
   def destroy
